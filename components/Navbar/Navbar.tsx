@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   BookmarkAltIcon,
-  CalendarIcon,
+  BookOpenIcon,
   ChartBarIcon,
   CursorClickIcon,
   MenuIcon,
@@ -62,10 +62,10 @@ const resources = [
     icon: BookmarkAltIcon,
   },
   {
-    name: 'Events',
-    description: 'See what meet-ups and other events we might be planning near you.',
+    name: '#100 List',
+    description: 'Building my list of 100 books I read annually',
     href: '#',
-    icon: CalendarIcon,
+    icon: BookOpenIcon,
   },
   { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
 ]
@@ -81,7 +81,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white dark:bg-slate-900">
       <div className=" mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -163,7 +163,7 @@ export default function Navbar() {
             </Popover>
 
             <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
+              #100 List
             </a>
             <a href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
               About
@@ -300,7 +300,7 @@ export default function Navbar() {
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Pricing
+                  #100 List
                 </a>
 
                 <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
