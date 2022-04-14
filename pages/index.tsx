@@ -80,7 +80,7 @@ const Home: NextPage = () => {
             <h2 className="font-bold text-6xl pb-4">Design.Develop.Deliver</h2>
             <p className="text-2xl max-w-lg pb-4">
               I like to design experiences that change the way the web looks.
-              Let's stop using boring work!
+              Lets stop using boring work!
             </p>
             <a className="hover:underline hover:leading-loose">Learn More</a>
           </div>

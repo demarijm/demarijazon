@@ -24,7 +24,7 @@ const About: NextPage = () => {
           the experience that each website evokes. Given the ever-increasing
           amount of time that we allocate on visiting websites - Web Sessions
           focuses on applying human-centered design principles and the latest
-          web technologies to enhance the experience of your site's visitors.
+          web technologies to enhance the experience of your sites visitors.
           Our need to develop using cutting edge web technologies complements
           our design obsession. Designing and developing websites without
           compromises allows us to deliver unique web experiences that are
