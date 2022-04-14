@@ -77,7 +77,7 @@ const Home: NextPage = () => {
   <p className='border-b-2 pb-12 dark:border-[#E2E8F0] border-black'>See More</p>
 
           <div className="pt-12 flex flex-col items-center leading-loose text-center justify-center">
-            <h2 className="font-bold text-6xl pb-4">Design.Develop.Deliver</h2>
+            <h2 className="font-bold text-[2rem] pb-4">Design.Develop.Deliver</h2>
             <p className="text-2xl max-w-lg pb-4">
               I like to design experiences that change the way the web looks.
               Lets stop using boring work!
