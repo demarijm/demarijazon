@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer'
@@ -7,18 +6,24 @@ import WorkTogether from '../components/WorkTogether'
 import styles from '../styles/Home.module.css'
 import Swiping from '../components/Swiping';
 
+import Container from '../components/container'
+import MoreStories from '../components/more-stories'
+import HeroPost from '../components/hero-post'
+import Intro from '../components/intro'
+import Layout from '../components/layout'
+import { getAllPostsForHome } from '../lib/api'
+import { CMS_NAME } from '../lib/constants'
+
 import "../styles/Home.module.css";
 
 
 
 
-const Home: NextPage = () => {
+const Index = ({ allPosts: { edges }, preview }) => {
+  const heroPost = edges[0]?.node
+  const morePosts = edges.slice(1)
+  const theTitle = heroPost.title.toString();
 
-  const boxes:string[] = [
-    'Example Website',
-    'Another Website',
-    'And Another one'
-  ]
 
   return (
     <div>
@@ -39,13 +44,13 @@ const Home: NextPage = () => {
             </div>
           </div>
           <h2 className="pt-12 font-bold">QUICK LINKS</h2>
-          <Swiping />
+          <Swiping posts={morePosts} />
 
      
           <p className="pb-2">See More</p>
 
           <h2 className="pt-6 font-bold">SOME OF MY WORK</h2>
-          <Swiping />
+          <Swiping posts={morePosts} />
 
           <p className="border-b-2 pb-12 border-black">
             See More
@@ -67,8 +72,32 @@ const Home: NextPage = () => {
 
         <Footer />
       </div>
+      <Layout preview={preview}>
+        <Container>
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.featuredImage}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
+      </Layout>
     </div>
   );
 }
 
-export default Home
+export default Index;
+
+export async function getStaticProps({ preview = false }) {
+  const allPosts = await getAllPostsForHome(preview)
+
+  return {
+    props: { allPosts, preview },
+  }
+}
