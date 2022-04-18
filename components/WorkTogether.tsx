@@ -1,6 +1,6 @@
 const WorkTogether = () => {
     return (
-        <div className="w-full h-[35rem] mt-12 flex flex-col justify-center items-center border-black dark:border-[#E2E8F0] border-2">
+        <div className="w-full h-[35rem] mt-12 flex flex-col justify-center items-center border-black border-2">
         <div className="text-center text-[4rem] font-bold leading-snug">
           <p>Lets</p>
           <p>work</p>
