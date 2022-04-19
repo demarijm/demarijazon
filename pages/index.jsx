@@ -26,7 +26,7 @@ const Index = ({ allPosts: { edges }, preview }) => {
 
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className="px-8">
         <Head>
           <title>Demari Jazon</title>
@@ -35,12 +35,16 @@ const Index = ({ allPosts: { edges }, preview }) => {
         </Head>
         <Navbar />
 
-        <main className="flex flex-col border-t-2 border-black pt-6 justify-start">
-          <img className="w-full" src="./web.png" />
-          <div className="flex justify-between border-b-2 border-black text-lg">
+        <main className="flex flex-col justify-start">
+          <div className='relative w-full'>
+          <img className="absolute z-20 " src="./web.png" />
+          <img className=' aboslute z-10' src='./ellipse.png' />
+          </div>
+
+          <div className="flex justify-between border-b-2 mb-12 pb-4 border-black text-lg">
             <p>DIGITAL + CREATIVE</p>
             <div>
-              <img className="h-8 pb-2" src="/box.gif" alt="moving box" />
+              <img className="h-6 mb-[0.9rem] " src="/box.gif" alt="moving box" />
             </div>
           </div>
           <h2 className="pt-12 font-bold">QUICK LINKS</h2>
