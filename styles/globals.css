@@ -6,8 +6,8 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
+ 
+
   font-family: Helvetica Neue, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
 }
@@ -26,12 +26,16 @@ a {
   width: 100%;
   height: 300px;
 }
+.swiper-pagination-bullet-active {
+  background: black !important;
+}
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   border: 2px solid black; 
+  position: relative;
 
   
 
@@ -40,14 +44,20 @@ a {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-align: flex-end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+
+
+  
+}
+
+.swiper-slide p {
+  z-index: 999;
+  text-align: right;
+  background-color: #fff;
 }
 
 .swiper-slide img {
@@ -55,4 +65,9 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+ 
+  
 }
+
+/* Wordpress styles */

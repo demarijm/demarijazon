@@ -11,7 +11,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-export default function Swiping() {
+export default function Swiping({posts}) {
+
+  console.log(posts);
   return (
     <>
       <Swiper
@@ -22,7 +24,7 @@ export default function Swiping() {
         breakpoints={{
             "@0.00": {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             "@0.75": {
               slidesPerView: 2,
@@ -38,9 +40,17 @@ export default function Swiping() {
             },
           }}
         modules={[Pagination]}
-        className="mySwiper"
+        className=""
       >
-        <SwiperSlide>Resume</SwiperSlide>
+        {posts.map((post) => {
+          return (
+          <SwiperSlide key={post.node.slug}>
+            <img src={post.node.featuredImage.node.sourceUrl} />
+            <p>{post.node.title}</p>
+            </SwiperSlide>
+          )
+        })}
+        <SwiperSlide>yo</SwiperSlide>
         <SwiperSlide>Upwork</SwiperSlide>
         <SwiperSlide>Blog</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
