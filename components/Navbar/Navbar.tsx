@@ -81,7 +81,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   return (
-    <Popover className="relative bg-white ">
+    <Popover className="relative bg-white border-b-2 mb-6 border-black ">
       <div className=" mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
